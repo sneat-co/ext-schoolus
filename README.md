@@ -1,8 +1,8 @@
-# schoolus-contract
+# ext-schoolus
 
-Public **contract surface** for the `schoolus` extension (product: **School
-Portal**), following the
-[`<id>-contract` repo-naming convention](https://github.com/sneat-co/sneat-specs/blob/main/standards/repo-naming.md).
+Public **extension-definition repo** for the `schoolus` extension (product:
+**School Portal**), following the
+[`ext-<id>` repo-naming convention](https://github.com/sneat-co/sneat-specs/blob/main/standards/repo-naming.md).
 
 It holds the **frozen wire shapes** other repos need in order to *talk to*
 School Portal — the TypeSpec source of truth and the matching Go DTOs. It
@@ -12,9 +12,9 @@ contains **no** School Portal implementation; that lives in
 ## Layout
 
 ```
-schoolus-contract/
+ext-schoolus/
 ├── typespec/           # api4schoolus.tsp — source of truth for the wire shape
-└── backend/            # Go module github.com/sneat-co/schoolus-contract/backend
+└── backend/            # Go module github.com/sneat-co/ext-schoolus/backend
     └── dto4schoolus/   # package dto4schoolus — the frozen request/response DTOs
 ```
 
@@ -24,8 +24,9 @@ hand-kept in sync (same convention as `eventius/typespec` and the
 
 ## Discovery
 
-Tagged `sneat-extension-contract` — see all contract repos at
-[`github.com/sneat-co?q=topic:sneat-extension-contract`](https://github.com/orgs/sneat-co/repositories?q=topic%3Asneat-extension-contract).
+Tagged `sneat-extension-definition` (with legacy `sneat-extension-contract`
+during migration) — see all extension-definition repos at
+[`github.com/sneat-co?q=topic:sneat-extension-definition`](https://github.com/orgs/sneat-co/repositories?q=topic%3Asneat-extension-definition).
 
 ## Status
 
