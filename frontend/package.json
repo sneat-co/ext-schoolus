@@ -1,0 +1,28 @@
+{
+  "name": "@sneat/ext-schoolus-frontend",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "packageManager": "pnpm@11.0.9",
+  "dependencies": {
+    "@angular/core": "21.2.9",
+    "@sneat/data": "0.22.0",
+    "@sneat/dto": "0.22.0",
+    "@sneat/space-models": "0.22.0",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@angular/compiler": "21.2.9",
+    "@angular/compiler-cli": "21.2.9",
+    "@nx/angular": "22.7.5",
+    "@nx/eslint": "22.7.5",
+    "@nx/eslint-plugin": "22.7.5",
+    "@nx/js": "22.7.5",
+    "eslint": "^9.39.5",
+    "ng-packagr": "~21.2.5",
+    "nx": "22.7.5",
+    "typescript": "~5.9.3"
+  },
+  "nx": { "includedScripts": [] }
+}

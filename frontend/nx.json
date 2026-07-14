@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": ["default", "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)"],
+    "sharedGlobals": []
+  },
+  "targetDefaults": {
+    "@nx/angular:package": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
+  },
+  "release": {
+    "projects": ["ext-schoolus-contract"],
+    "projectsRelationship": "fixed",
+    "releaseTagPattern": "v{version}",
+    "git": { "commit": true, "tag": true, "push": true },
+    "version": { "conventionalCommits": true, "fallbackCurrentVersionResolver": "disk" },
+    "changelog": { "workspaceChangelog": true, "automaticFromRef": true },
+    "publish": {
+      "executor": "@nx/js:release-publish",
+      "dependsOn": ["build"],
+      "options": { "packageRoot": "dist/{projectRoot}", "access": "public" }
+    }
+  }
+}

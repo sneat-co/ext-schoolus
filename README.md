@@ -5,8 +5,9 @@ Public **extension-definition repo** for the `schoolus` extension (product:
 [`ext-<id>` repo-naming convention](https://github.com/sneat-co/sneat-specs/blob/main/standards/repo-naming.md).
 
 It holds the **frozen wire shapes** other repos need in order to *talk to*
-School Portal — the TypeSpec source of truth and the matching Go DTOs. It
-contains **no** School Portal implementation; that lives in
+School Portal — TypeSpec, matching Go DTOs, and the published TypeScript
+contract package `@sneat/extension-schoolus-contract`. It contains **no**
+School Portal implementation; that lives in
 [`sneat-co/schoolus`](https://github.com/sneat-co/schoolus) (private).
 
 ## Layout
@@ -16,10 +17,11 @@ ext-schoolus/
 ├── typespec/           # api4schoolus.tsp — source of truth for the wire shape
 └── backend/            # Go module github.com/sneat-co/ext-schoolus/backend
     └── dto4schoolus/   # package dto4schoolus — the frozen request/response DTOs
+└── frontend/           # @sneat/extension-schoolus-contract npm package
 ```
 
-No emitters are configured — the `.tsp` file and the Go package are
-hand-kept in sync (same convention as `eventius/typespec` and the
+No TypeSpec emitters are configured — the `.tsp`, Go DTOs, and TypeScript
+contract are hand-kept in sync (same convention as `eventius/typespec` and the
 `sneat-go/typespec` directory).
 
 ## Discovery

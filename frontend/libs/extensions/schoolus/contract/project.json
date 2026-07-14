@@ -1,0 +1,22 @@
+{
+  "name": "ext-schoolus-contract",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/extensions/schoolus/contract/src",
+  "projectType": "library",
+  "tags": ["layer:contract", "domain:schoolus"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/extensions/schoolus/contract/ng-package.json",
+        "tsConfig": "libs/extensions/schoolus/contract/tsconfig.lib.json"
+      },
+      "configurations": {
+        "production": { "tsConfig": "libs/extensions/schoolus/contract/tsconfig.lib.prod.json" }
+      },
+      "defaultConfiguration": "production"
+    },
+    "nx-release-publish": { "options": { "packageRoot": "dist/{projectRoot}" } }
+  }
+}
